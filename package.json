@@ -1,0 +1,24 @@
+{
+  "name": "abstractfabricapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PedroHCarlini/abstractFabricAPI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/PedroHCarlini/abstractFabricAPI/issues"
+  },
+  "homepage": "https://github.com/PedroHCarlini/abstractFabricAPI#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
