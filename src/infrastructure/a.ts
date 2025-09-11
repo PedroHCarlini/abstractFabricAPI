@@ -1,7 +1,6 @@
 import { User } from "../domain/entities/user";
-import { IUserRepository } from "../domain/interfaces/user_inteface_repository";
 
-export class UserRepository implements IUserRepository {
+export class MongoDbRepository {
   create(user: User): Promise<User> {
     throw new Error("Method not implemented.");
   }
@@ -13,7 +12,7 @@ export class UserRepository implements IUserRepository {
     throw new Error("Method not implemented");
   }
 
-  readOne(): Promise<User> {
+  readOne(id: string): Promise<User> {
     throw new Error("Method not implemented");
   }
 

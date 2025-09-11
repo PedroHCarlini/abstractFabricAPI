@@ -6,8 +6,9 @@ import express from "express";
 
 import type { Application, Request, Response, NextFunction } from "express";
 import router from "./routes";
-// import { connect } from "./infrastructure/database/mongoDb/mongoDbClient";
-// import { errorHandler } from "./middlewares/ErrorHandler";
+import { config } from "./config/env";
+import { errorHandler } from "./middlewares/error_handler";
+import { connect } from "./infrastructure/databases/mongodb/mongo_db_client";
 
 class App {
   public app: Application;
@@ -20,7 +21,7 @@ class App {
 
   private middlewares(): void {
     this.app.use(express.json());
-    // this.app.use(errorHandler);
+    this.app.use(errorHandler);
     this.app.use(cors());
   }
 
@@ -36,7 +37,7 @@ class App {
   public async start(): Promise<void> {
     try {
       await connect();
-      const PORT = config.port;
+      const PORT = config.port || 3000;
       this.app.listen(PORT, () => {
         console.log(`Server is running on port ${PORT}`);
       });
